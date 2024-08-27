@@ -52,7 +52,7 @@ def process_kakao_data(folder_path):
 
 def regular_money_function():
     start_date = datetime.strptime('2022-12-01', "%Y-%m-%d")
-    total_months_diff = ((datetime.now().year - start_date.year) * 12 + datetime.now().month - start_date.month)
+    total_months_diff = ((datetime.now().year - start_date.year) * 12 + datetime.now().month - start_date.month) +1
     return total_months_diff
 
 def apply_adjustments(name, count_days, kakao_money, regular_money):
