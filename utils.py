@@ -50,9 +50,15 @@ def process_kakao_data(folder_path):
     df_result['거래 후 잔액'] = df_result['거래 후 잔액'].str.replace(',', '').astype(int)
     return df_result[df_result['거래구분'] == '일반입금']
 
+# def regular_money_function():
+#     start_date = datetime.strptime('2022-12-01', "%Y-%m-%d")
+#     total_months_diff = ((datetime.now().year - start_date.year) * 12 + datetime.now().month - start_date.month) +1
+#     return total_months_diff
+
 def regular_money_function():
-    start_date = datetime.strptime('2022-12-01', "%Y-%m-%d")
-    total_months_diff = ((datetime.now().year - start_date.year) * 12 + datetime.now().month - start_date.month) +1
+    start_date = datetime.strptime('2022-12-01', "%Y-%m-%d") #2022년 12월 1일 부비 적용 시작
+    end_date = datetime.strptime('2024-09-30', "%Y-%m-%d")   #2024년 9월 30일 부비 규칙 마지막
+    total_months_diff = ((end_date.year - start_date.year) * 12 + end_date.month - start_date.month) + 1
     return total_months_diff
 
 def apply_adjustments(name, count_days, kakao_money, regular_money):
