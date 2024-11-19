@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from utils import process_company_data, process_kakao_data, regular_money_function, total_df, apply_adjustments, format_currency, emp_nm_list, empno_list, type_list, company_folder_path, kakao_folder_path
+from utils_revised import *
 
 # Set page configuration
 st.set_page_config(page_title="AI연구센터 부비확인", layout="wide")
@@ -49,9 +49,3 @@ with col2:
             else:
                 st.write("차액을 돌려받거나 해당 일 수만큼 나중에 입금하시기 바랍니다.")
 
-    # st.divider()
-    # st.write('### 전체 확인')
-    # st.write('''차액이 양수(+)인 경우 더 내야합니다.  
-    #          차액이 음수(-)인 경우 부비를 돌려받아야합니다.''')
-    # df_total = total_df(df_company, df_kakao)
-    # st.write(df_total)
