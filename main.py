@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from utils_revised import *
+from utils import *
 
 # Set page configuration
 st.set_page_config(page_title="AI연구센터 부비확인", layout="wide")
